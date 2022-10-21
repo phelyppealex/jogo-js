@@ -13,17 +13,42 @@ imagem.src = 'img/map.png'
 const jogadorImagem = new Image()
 jogadorImagem.src = 'img/playerDown.png'
 
+//Desenhando após carregar...
 imagem.onload = () => {
-    c.drawImage(imagem,0,-150)
-    c.drawImage(
-        jogadorImagem,
-        0,
-        0,
-        jogadorImagem.width/4,
-        jogadorImagem.height,
-        canvas.width/2 - jogadorImagem.width/2,
-        canvas.height/2 - jogadorImagem.height/2,
-        jogadorImagem.width/4,
-        jogadorImagem.height
-    )
+    //...Mapa
+    c.drawImage(imagem,-55,-150)
+    
+    jogadorImagem.onload = () => {
+        //...Boneco
+        c.drawImage(
+            jogadorImagem,
+            0,
+            0,
+            jogadorImagem.width/4,
+            jogadorImagem.height,
+            canvas.width/2 - jogadorImagem.width/2,
+            canvas.height/2 - jogadorImagem.height/2,
+            jogadorImagem.width/4,
+            jogadorImagem.height
+        )
+    }
 }
+
+
+
+window.addEventListener('keydown', (e) => {
+    switch(e.key){
+        case 'w':
+            console.log('w')
+        break
+        case 'a':
+            console.log('a')
+        break
+        case 's':
+            console.log('s')
+        break
+        case 'd':
+            console.log('d')
+        break
+    }
+})
