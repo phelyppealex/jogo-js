@@ -1,1 +1,1 @@
-# Criação de um joguinho utilizando apenas javascript e html
+## Criação de um joguinho utilizando a tag canvas do HTML e JavaScript
